@@ -1,0 +1,99 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* GrowMate custom base styles */
+@layer base {
+    [x-cloak] {
+        display: none !important;
+    }
+    body {
+        @apply bg-white text-black antialiased;
+        font-family: 'Poppins', sans-serif;
+    }
+}
+
+/* GrowMate custom component classes */
+@layer components {
+    .growmate-container {
+        @apply w-full max-w-mobile mx-auto px-page lg:px-8;
+    }
+    /* Dalam app layout, container lebih lebar di desktop */
+    .app-layout .growmate-container {
+        @apply lg:max-w-5xl;
+    }
+    .growmate-card {
+        @apply bg-white rounded-2xl shadow-card p-card border border-border/20 transition-all duration-200;
+    }
+    .growmate-btn-primary {
+        @apply w-full h-btn bg-gradient-to-r from-primary to-primary-dark text-white font-semibold text-xs rounded-xl hover:shadow-lg hover:shadow-primary/20 active:scale-[0.98] transition-all duration-200 flex items-center justify-center;
+    }
+    .growmate-btn-secondary {
+        @apply w-full h-btn bg-gray-100 text-gray-600 font-semibold text-xs rounded-xl hover:bg-gray-200 hover:shadow-sm transition-all duration-200 flex items-center justify-center;
+    }
+    .growmate-input {
+        @apply w-full rounded-xl border border-border px-4 py-3 text-sm focus:border-primary focus:ring-2 focus:ring-primary/20 focus:shadow-sm placeholder:text-soft-text transition-all duration-200;
+    }
+    .growmate-nav-item {
+        @apply flex flex-col items-center gap-1 text-soft-text text-[10px] transition-colors duration-200;
+    }
+    .growmate-nav-item.active {
+        @apply text-primary;
+    }
+    .growmate-sidebar-item {
+        @apply flex items-center gap-3 px-4 py-2.5 rounded-xl text-sm font-medium text-gray-600 transition-all duration-200 hover:bg-primary/5 hover:text-primary;
+    }
+    .growmate-sidebar-item.active {
+        @apply bg-primary/10 text-primary font-semibold;
+    }
+    .growmate-mood-card {
+        @apply flex flex-col items-center gap-2 p-4 rounded-2xl bg-white shadow-card border border-transparent cursor-pointer transition-all duration-200 hover:scale-105 hover:shadow-lg;
+    }
+    .growmate-mood-card.selected {
+        @apply ring-2 ring-primary bg-primary/5 border-primary/20;
+    }
+    .growmate-badge {
+        @apply text-[10px] lg:text-[11px] font-medium px-3 py-1 rounded-full;
+    }
+    .growmate-heading {
+        @apply text-base lg:text-lg font-semibold leading-6 lg:leading-7;
+    }
+    .growmate-body {
+        @apply text-[13px] lg:text-[14px] font-normal leading-5 lg:leading-6;
+    }
+
+    /* Page header */
+    .page-header {
+        @apply mb-6 lg:mb-8;
+    }
+    .page-header h1 {
+        @apply text-xl lg:text-2xl font-bold text-black;
+    }
+    .page-header p {
+        @apply text-[13px] text-soft-text mt-0.5;
+    }
+
+    /* Section header */
+    .section-header {
+        @apply flex items-center justify-between mb-3 lg:mb-4;
+    }
+
+    /* Stat card */
+    .stat-card {
+        @apply bg-white rounded-2xl p-4 shadow-card border border-border/20 transition-all duration-200;
+    }
+
+    /* Empty state */
+    .empty-state {
+        @apply text-center py-10 lg:py-12;
+    }
+    .empty-state-icon {
+        @apply text-4xl lg:text-5xl mb-3;
+    }
+    .empty-state-title {
+        @apply text-[13px] text-soft-text font-medium;
+    }
+    .empty-state-desc {
+        @apply text-[10px] text-soft-text mt-1;
+    }
+}
